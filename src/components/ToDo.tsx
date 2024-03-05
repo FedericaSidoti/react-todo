@@ -22,7 +22,11 @@ export function ToDo() {
                 </p>
             </div>
             <div className="todo-list">
-                <h2>Ask Hermione about:</h2>
+                <p>
+                    A little gift for you, Harry: click on the wand and you can
+                    add or remove tasks from the list, so we can practice on
+                    them later. I know you sucks in Charms. Love, Hermione
+                </p>
                 <ul className="spells-todo">{tasknames}</ul>
             </div>
         </div>
