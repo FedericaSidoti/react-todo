@@ -1,20 +1,92 @@
+$ink: rgb(3, 40, 3);
+
 #root {
     height: 100vh;
     display: flex;
     overflow: hidden;
+    position: relative;
+    background-image: url(../public/img/background.jpg);
+    background-size: cover;
+    padding: 10px;
+    color: $ink;
+}
+
+.header {
+    position: absolute;
+    left: 0;
+    right: 50%;
+    top: 0px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
 }
 
 .spellList {
-    background-color: aqua;
-    width: 70%;
+    width: 50%;
     overflow: auto;
+    position: relative;
+    margin-top: 100px;
+    padding: 30px;
+    font-size: 20px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+
+        li {
+            width: 45%;
+        }
+    }
+
+    .spell {
+        margin-bottom: 10px;
+
+        .spell-title {
+            display: flex;
+
+            img {
+                width: 30px;
+                height: 30px;
+                transform: rotate(70deg);
+                margin-left: 10px;
+            }
+        }
+
+        .spell-name {
+            font-weight: 800;
+        }
+    }
 }
 
 .todo {
-    background-color: bisque;
-    width: 30%;
-}
+    width: 50%;
+    padding: 20px;
 
-.spell {
-    margin-bottom: 10px;
+    .todo-list {
+        background-image: url(../public/img/pergamena.png);
+        background-size: cover;
+        padding: 40px;
+        min-height: 500px;
+    }
+
+    .todo-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
 }

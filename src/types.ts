@@ -5,3 +5,7 @@ export interface Spell {
 }
 
 export type SpellListType = Spell[];
+
+export interface SpellListProps {
+    spells: Spell[];
+}
