@@ -1,0 +1,20 @@
+#root {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.spellList {
+    background-color: aqua;
+    width: 70%;
+    overflow: auto;
+}
+
+.todo {
+    background-color: bisque;
+    width: 30%;
+}
+
+.spell {
+    margin-bottom: 10px;
+}
