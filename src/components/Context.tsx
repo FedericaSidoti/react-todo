@@ -1,30 +1,21 @@
-import React, {
-    createContext,
-    useContext,
-    ReactNode,
-    useState,
-    useEffect,
-} from "react";
-import { Spell } from "../types";
-import axios from "axios";
-import { TodoContextValue } from "../types";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-interface TodoContextProps {
-    children: ReactNode;
-}
+import { Spell, TodoContextProps, TodoContextValue } from "../types";
+
+import axios from "axios";
 
 const TodoContext = createContext<TodoContextValue | undefined>(undefined);
 
 export const TodoProvider: React.FC<TodoContextProps> = ({ children }) => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState<Spell[]>([]);
     const [spells, setSpells] = useState<Spell[]>([]);
 
-    const addTask = (task) => {
+    const addTask = (task: Spell) => {
         setTasks([...tasks, task]);
     };
 
-    const removeTask = (taskId: string) => {
-        const updatedTasks = tasks.filter((task) => task.id !== taskId);
+    const removeTask = (taskID: string) => {
+        const updatedTasks = tasks.filter((task) => task.id !== taskID);
         setTasks(updatedTasks);
     };
 
@@ -33,7 +24,7 @@ export const TodoProvider: React.FC<TodoContextProps> = ({ children }) => {
             const response = await axios.get(
                 "https://hp-api.onrender.com/api/spells"
             );
-            const spellsData = response.data; // Array di incantesimi
+            const spellsData = response.data;
             setSpells(spellsData);
         } catch (error) {
             console.error("Error fetching spells:", error);
@@ -44,7 +35,6 @@ export const TodoProvider: React.FC<TodoContextProps> = ({ children }) => {
         fetchSpells();
     }, []);
 
-    // Restituisce il context provider
     return (
         <TodoContext.Provider value={{ tasks, addTask, removeTask, spells }}>
             {children}

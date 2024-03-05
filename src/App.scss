@@ -48,13 +48,6 @@ $ink: rgb(3, 40, 3);
 
         .spell-title {
             display: flex;
-
-            img {
-                width: 30px;
-                height: 30px;
-                transform: rotate(70deg);
-                margin-left: 10px;
-            }
         }
 
         .spell-name {
@@ -88,5 +81,20 @@ $ink: rgb(3, 40, 3);
 
     h2 {
         text-align: center;
+    }
+}
+
+.btn-add {
+    width: 30px;
+    height: 30px;
+    transform: rotate(70deg);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.spells-todo {
+    li {
+        display: flex;
+        padding: 10px;
     }
 }

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Spell {
     id: string;
     name: string;
@@ -15,4 +17,8 @@ export interface TodoContextValue {
     addTask: (task: Spell) => void;
     removeTask: (index: string) => void;
     spells: Spell[]; // Assicurati che `spells` sia correttamente inizializzato
+}
+
+export interface TodoContextProps {
+    children: ReactNode;
 }
