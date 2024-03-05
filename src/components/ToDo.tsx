@@ -1,6 +1,6 @@
 import { SpellListProps } from "../types";
 
-export function ToDo({ spells }: SpellListProps) {
+export function ToDo() {
     return (
         <div className="todo">
             <div className="todo-header">

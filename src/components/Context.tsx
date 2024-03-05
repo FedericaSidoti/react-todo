@@ -1,11 +1,19 @@
-import React, { createContext, useContext, ReactNode, useState } from "react";
+import React, {
+    createContext,
+    useContext,
+    ReactNode,
+    useState,
+    useEffect,
+} from "react";
 import { Spell } from "../types";
+import axios from "axios";
+import { TodoContextValue } from "../types";
 
 interface TodoContextProps {
     children: ReactNode;
 }
 
-const TodoContext = createContext(undefined);
+const TodoContext = createContext<TodoContextValue | undefined>(undefined);
 
 export const TodoProvider: React.FC<TodoContextProps> = ({ children }) => {
     const [tasks, setTasks] = useState([]);
@@ -20,6 +28,23 @@ export const TodoProvider: React.FC<TodoContextProps> = ({ children }) => {
         setTasks(updatedTasks);
     };
 
+    const fetchSpells = async () => {
+        try {
+            const response = await axios.get(
+                "https://hp-api.onrender.com/api/spells"
+            );
+            const spellsData = response.data; // Array di incantesimi
+            setSpells(spellsData);
+        } catch (error) {
+            console.error("Error fetching spells:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchSpells();
+    }, []);
+
+    // Restituisce il context provider
     return (
         <TodoContext.Provider value={{ tasks, addTask, removeTask, spells }}>
             {children}

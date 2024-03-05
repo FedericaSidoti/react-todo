@@ -5,30 +5,15 @@ import { ToDo } from "./components/ToDo";
 import { SpellListType } from "./types";
 import { Header } from "./components/Header";
 import axios from "axios";
+import { TodoProvider, useTodo } from "./components/Context";
 
 function App() {
-    const [spells, setSpells] = useState<SpellListType>([]);
-
-    useEffect(() => {
-        const fetchSpells = async () => {
-            try {
-                const response = await axios.get(
-                    "https://hp-api.onrender.com/api/spells"
-                );
-                setSpells(response.data);
-            } catch (error) {
-                console.error("Error fetching spells:", error);
-            }
-        };
-
-        fetchSpells();
-    }, []);
     return (
-        <>
+        <TodoProvider>
             <Header />
-            <SpellList spells={spells} />
-            <ToDo spells={spells} />
-        </>
+            <SpellList />
+            <ToDo />
+        </TodoProvider>
     );
 }
 

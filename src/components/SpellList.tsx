@@ -1,18 +1,22 @@
-import { SpellListProps } from "../types";
+import { Spell, SpellListProps } from "../types";
+import { useTodo } from "./Context";
 
-export function SpellList({ spells }: SpellListProps) {
-    const spellListItems = spells.map((spell, index) => {
-        return (
-            <li key={index} className="spell">
-                <div className="spell-title">
-                    <p className="spell-name">{spell.name}</p>
-                    <img src="../public/img/wand-gif.gif" />
-                </div>
+export function SpellList() {
+    const { spells } = useTodo();
+    const spellListItems: JSX.Element[] = spells.map(
+        (spell: Spell, index: number) => {
+            return (
+                <li key={index} className="spell">
+                    <div className="spell-title">
+                        <p className="spell-name">{spell.name}</p>
+                        <img src="../public/img/wand-gif.gif" />
+                    </div>
 
-                <p>{spell.description}</p>
-            </li>
-        );
-    });
+                    <p>{spell.description}</p>
+                </li>
+            );
+        }
+    );
 
     return (
         <div className="spellList">
