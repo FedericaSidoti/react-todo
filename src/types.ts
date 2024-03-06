@@ -22,3 +22,7 @@ export interface TodoContextValue {
 export interface TodoContextProps {
     children: ReactNode;
 }
+
+export interface SingleSpellProps {
+    spell: Spell;
+}

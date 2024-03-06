@@ -1,6 +1,6 @@
 import { Spell } from "../types";
-import AddSpellAsTask from "./AddSpellAsTask";
 import { useTodo } from "./Context";
+import { SingleSpell } from "./SingleSpell";
 
 export function SpellList() {
     const { spells } = useTodo();
@@ -9,12 +9,7 @@ export function SpellList() {
         (spell: Spell, index: number) => {
             return (
                 <li key={index} className="spell">
-                    <div className="spell-title">
-                        <p className="spell-name">{spell.name}</p>
-                        <AddSpellAsTask spell={spell} />
-                    </div>
-
-                    <p>{spell.description}</p>
+                    <SingleSpell spell={spell} />
                 </li>
             );
         }
