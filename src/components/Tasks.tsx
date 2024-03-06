@@ -1,13 +1,12 @@
 import { useTodo } from "./Context";
-import RemoveSpellAsTask from "./RemoveSpellAsTask";
+import { SingleTask } from "./SingleTask";
 
 export function Tasks() {
     const { tasks } = useTodo();
     const tasknames = tasks.map((task) => {
         return (
             <li>
-                <p>{task.name}</p>
-                <RemoveSpellAsTask taskID={task.id} />
+                <SingleTask task={task} />
             </li>
         );
     });

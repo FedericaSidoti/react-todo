@@ -26,3 +26,7 @@ export interface TodoContextProps {
 export interface SingleSpellProps {
     spell: Spell;
 }
+
+export interface SingleTaskProps {
+    task: Spell;
+}
