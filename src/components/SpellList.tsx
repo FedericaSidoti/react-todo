@@ -1,4 +1,4 @@
-import { Spell, SpellListProps } from "../types";
+import { Spell } from "../types";
 import AddSpellAsTask from "./AddSpellAsTask";
 import { useTodo } from "./Context";
 

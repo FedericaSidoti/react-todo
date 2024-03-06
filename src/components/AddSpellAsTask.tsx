@@ -11,7 +11,7 @@ const AddSpellAsTask = ({ spell }: { spell: Spell }) => {
     return (
         <img
             className="btn-add"
-            src="../public/img/wand-gif.gif"
+            src="/img/wand-gif.gif"
             onClick={handleAddTask}
         />
     );

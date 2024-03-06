@@ -1,5 +1,4 @@
 import { useTodo } from "./Context";
-import { Spell } from "../types";
 
 const RemoveSpellAsTask = ({ taskID }: { taskID: string }) => {
     const { removeTask } = useTodo();
@@ -11,7 +10,7 @@ const RemoveSpellAsTask = ({ taskID }: { taskID: string }) => {
     return (
         <img
             className="btn-add"
-            src="../public/img/wand-gif.gif"
+            src="/img/wand-gif.gif"
             onClick={handleRemoveTask}
         />
     );
