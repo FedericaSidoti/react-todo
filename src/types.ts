@@ -13,7 +13,7 @@ export interface SpellListProps {
 }
 
 export interface TodoContextValue {
-    tasks: Spell[];
+    tasks: SpellListType;
     addTask: (task: Spell) => void;
     removeTask: (index: string) => void;
     spells: SpellListType; // Assicurati che `spells` sia correttamente inizializzato
