@@ -9,7 +9,7 @@ export function ToDo() {
                 <p>
                     A little gift for you, Harry: click on the wand and you can
                     add or remove tasks from the list, so we can practice on
-                    them later. I know you sucks in Charms. Love, Hermione
+                    them later. I know you suck in Charms. Love, Hermione
                 </p>
                 <Tasks />
             </div>

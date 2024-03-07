@@ -37,7 +37,14 @@
 
 .spells-todo {
     li {
-        display: flex;
         padding: 10px;
+
+        .wrap-task {
+            display: flex;
+        }
+
+        .task-des {
+            font-size: 12px;
+        }
     }
 }
