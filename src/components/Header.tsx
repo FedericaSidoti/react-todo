@@ -1,7 +1,6 @@
 export function Header() {
     return (
         <div className="header">
-            <img />
             <div className="title-wrap">
                 <h1>Practical Guide To Enchantment</h1>
                 <p>
