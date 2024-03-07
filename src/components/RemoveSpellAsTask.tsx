@@ -9,7 +9,7 @@ const RemoveSpellAsTask = ({ taskID }: { taskID: string }) => {
 
     return (
         <img
-            className="btn-add"
+            className="btn-wand"
             src="/img/wand-gif.gif"
             onClick={handleRemoveTask}
         />

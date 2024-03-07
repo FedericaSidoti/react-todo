@@ -1,0 +1,32 @@
+.spellList {
+    width: 50%;
+    overflow: auto;
+    position: relative;
+    margin-top: 100px;
+    padding: 30px;
+    font-size: 20px;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+
+        li {
+            width: 45%;
+        }
+    }
+
+    .spell {
+        margin-bottom: 10px;
+
+        .spell-title {
+            display: flex;
+        }
+
+        .spell-name {
+            font-weight: 800;
+            color: $redink;
+        }
+    }
+}

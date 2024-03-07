@@ -1,0 +1,43 @@
+.todo {
+    width: 50%;
+    padding: 0 20px;
+
+    .todo-list {
+        background-image: url(../public/img/pergamena.png);
+        background-size: cover;
+        padding: 50px;
+        min-height: 500px;
+        font-family: "Dancing Script", cursive;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .todo-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 20px;
+
+        .disclaimer {
+            color: rgb(56, 54, 54);
+            letter-spacing: 2px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+.spells-todo {
+    li {
+        display: flex;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,10 @@
+#root {
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../public/img/background.jpg);
+    background-size: cover;
+    padding: 10px;
+    color: $ink;
+}
